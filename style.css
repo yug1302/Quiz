@@ -1,0 +1,117 @@
+:root {
+    --navy: #0b1f3a;
+    --navy-mid: #16325c;
+    --royal: #1e4d8c;
+    --gold: #c9a227;
+    --gold-light: #e8c547;
+    --gold-deep: #9a7b1a;
+    --white: #ffffff;
+    --ivory: #f7f4ea;
+    --text: #12233d;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: "Segoe UI", Georgia, "Times New Roman", serif;
+    background:
+        radial-gradient(circle at top, #1f4e8a 0%, transparent 42%),
+        linear-gradient(180deg, var(--navy) 0%, #081527 100%);
+    color: var(--ivory);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 48px 20px 72px;
+}
+
+h1 {
+    margin: 0 0 32px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    text-shadow: 0 1px 0 var(--gold-deep);
+    border-bottom: 2px solid var(--gold);
+    padding-bottom: 12px;
+}
+
+#quiz {
+    width: min(640px, 100%);
+    background: var(--white);
+    color: var(--text);
+    border: 1px solid var(--gold);
+    border-radius: 12px;
+    padding: 36px 32px 28px;
+    box-shadow:
+        0 0 0 4px rgba(201, 162, 39, 0.18),
+        0 18px 40px rgba(8, 21, 39, 0.45);
+}
+
+#question {
+    margin: 0 0 24px;
+    font-size: 1.35rem;
+    line-height: 1.45;
+    color: var(--navy-mid);
+    font-weight: 600;
+}
+
+#options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+#options button {
+    appearance: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    font: inherit;
+    font-size: 1rem;
+    color: var(--navy);
+    background: var(--ivory);
+    border: 1.5px solid var(--royal);
+    border-radius: 8px;
+    padding: 14px 16px;
+    transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.15s ease;
+}
+
+#options button:hover {
+    background: var(--navy-mid);
+    border-color: var(--gold);
+    color: var(--white);
+    transform: translateY(-1px);
+}
+
+#options button:focus-visible {
+    outline: 3px solid var(--gold);
+    outline-offset: 2px;
+}
+
+#options button:active {
+    background: var(--royal);
+    border-color: var(--gold-light);
+    color: var(--white);
+}
+
+#result {
+    width: min(640px, 100%);
+    margin: 28px 0 0;
+    padding: 16px 20px;
+    text-align: center;
+    font-size: 1.15rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: var(--navy);
+    background: var(--gold-light);
+    border-radius: 8px;
+    min-height: 1.2em;
+}
+
+#result:empty {
+    display: none;
+}
